@@ -2,6 +2,7 @@ import React from 'react';
 import {Box, CssBaseline} from "@mui/material";
 import LeftSidebar from "./components/LeftSidebar/LeftSidebar";
 import { SidebarProvider } from "./context/SidebarContext";
+import MainContent from "./components/MainContent/MainContent";
 
 function App() {
     return (
@@ -9,7 +10,7 @@ function App() {
             <CssBaseline />
             <SidebarProvider>
                 <LeftSidebar />
-                {/*<MainContent />*/}
+                <MainContent />
             </SidebarProvider>
         </Box>
     );

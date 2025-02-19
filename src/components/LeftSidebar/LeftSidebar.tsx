@@ -11,6 +11,7 @@ export default function LeftSidebar() {
         <CustomDrawer variant="persistent" anchor="left" open={open}>
             <LeftSidebarHeader />
             <Divider />
+
         </CustomDrawer>
     )
 }
