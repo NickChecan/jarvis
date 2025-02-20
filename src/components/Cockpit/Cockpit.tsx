@@ -16,6 +16,7 @@ import {AppBar, BurgerMenu, Sidebar, SidebarHeader} from "./Cockpit.styles";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useSidebar } from "../../hooks/useSidebar";
+import Header from "../Header/Header";
 
 export default function Cockpit() {
 
@@ -35,24 +36,7 @@ export default function Cockpit() {
 
     return (
         <>
-            <AppBar position="fixed" open={open}>
-                <Toolbar>
-                    <BurgerMenu
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        sx={[
-                            open && { display: 'none' },
-                        ]}
-                    >
-                        <MenuIcon/>
-                    </BurgerMenu>
-                    <Typography variant="h6" noWrap component="div">
-                        Persistent Drawer
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+            <Header />
             <Sidebar
                 variant="persistent"
                 anchor="left"
