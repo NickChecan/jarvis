@@ -1,6 +1,6 @@
 import React from 'react';
 import {Toolbar, Typography} from "@mui/material";
-import {AppBar, BurgerMenu} from "../Cockpit/Cockpit.styles";
+import {AppBar, BurgerMenu} from "./Header.styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useSidebar } from "../../hooks/useSidebar";
 
@@ -10,10 +10,6 @@ export default function Header() {
 
     const handleDrawerOpen = () => {
         setOpen(true);
-    };
-
-    const handleDrawerClose = () => {
-        setOpen(false);
     };
 
     return (
