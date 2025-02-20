@@ -15,12 +15,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import {AppBar, BurgerMenu, Sidebar, SidebarHeader} from "./Cockpit.styles";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { useSidebar } from "../../hooks/useSidebar";
 
 export default function Cockpit() {
 
     const theme = useTheme();
 
-    const [open, setOpen] = React.useState(false);
+    const { open, setOpen } = useSidebar();
 
     const handleDrawerOpen = () => {
         setOpen(true);
