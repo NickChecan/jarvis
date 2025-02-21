@@ -1,9 +1,12 @@
 import React from 'react';
 import {List, ListItem, ListItemButton, ListItemIcon, ListSubheader, Typography} from "@mui/material";
 
-export default function ChatList() {
+interface ItemsListProps {
+    items: string[];
+    title: string;
+}
 
-    const chats = ['Some Topic', 'Summarization']
+export default function ItemsList({ items, title }: ItemsListProps) {
 
     return (
         <List
@@ -13,12 +16,12 @@ export default function ChatList() {
             subheader={
                 <ListSubheader component="div" id="nested-list-subheader">
                     <Typography variant={"overline"}>
-                        CHATS
+                        {title}
                     </Typography>
                 </ListSubheader>
             }
         >
-            {chats.map((text, index) => (
+            {items.map((text, index) => (
                 <ListItem key={text} disablePadding>
                     <ListItemButton>
                         <ListItemIcon>

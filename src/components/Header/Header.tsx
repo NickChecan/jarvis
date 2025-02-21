@@ -27,7 +27,7 @@ export default function Header() {
                     <MenuIcon/>
                 </BurgerMenu>
                 <Typography variant="h6" noWrap component="div">
-                    Jarvis Assistant
+                    Jarvis
                 </Typography>
             </Toolbar>
         </AppBar>

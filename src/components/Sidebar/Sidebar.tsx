@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import {useSidebar} from "../../hooks/useSidebar";
 import SidebarHeader from "../SidebarHeader/SidebarHeader";
-import ChatList from "../ChatList/ChatList";
+import ItemsList from "../ItemsList/ItemsList";
 
 export default function Sidebar() {
 
@@ -26,7 +26,9 @@ export default function Sidebar() {
         >
             <SidebarHeader/>
             <Divider/>
-            <ChatList/>
+            <ItemsList items={['Dashboard', 'Cockpit']} title={"apps"}/>
+            <Divider/>
+            <ItemsList items={['Some Topic', 'Summarization']} title={"chat"}/>
         </PersistentDrawer>
     )
 
