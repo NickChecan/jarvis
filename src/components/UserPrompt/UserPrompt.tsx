@@ -3,15 +3,15 @@ import {
     ButtonsRowBox,
     CustomPaper,
     promptInputProps,
-    PromptTextField,
     SendIconButton
 } from "./UserPrompt.styles";
 import SendIcon from "@mui/icons-material/Send";
+import {TextField} from "@mui/material";
 
 export default function UserPrompt() {
     return (
         <CustomPaper elevation={2}>
-            <PromptTextField
+            <TextField
                 variant="standard"
                 multiline={true}
                 maxRows={5}

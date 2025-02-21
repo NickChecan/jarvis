@@ -9,10 +9,6 @@ export const CustomPaper = styled(Paper)(({ theme }) => ({
 
 }));
 
-export const PromptTextField = styled(TextField)(({ theme }) => ({
-    flexGrow: 1,
-}));
-
 export const promptInputProps = {
     disableUnderline: true,
     style: {
