@@ -3,6 +3,7 @@ import {Box, CssBaseline, Drawer, IconButton, Toolbar, Typography} from "@mui/ma
 import {SidebarProvider} from "./context/SidebarContext";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
+import ChatWindow from "./components/ChatWindow/ChatWindow";
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
             <SidebarProvider>
                 <Header />
                 <Sidebar />
+                <ChatWindow />
             </SidebarProvider>
 
         </Box>
