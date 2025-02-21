@@ -6,7 +6,8 @@ import {
     SendIconButton
 } from "./UserPrompt.styles";
 import SendIcon from "@mui/icons-material/Send";
-import {TextField} from "@mui/material";
+import {Button, IconButton, TextField} from "@mui/material";
+import {Add} from "@mui/icons-material";
 
 export default function UserPrompt() {
     return (
@@ -20,6 +21,12 @@ export default function UserPrompt() {
                 InputProps={promptInputProps}
             />
             <ButtonsRowBox>
+                <IconButton color="inherit">
+                    <Add />
+                </IconButton>
+                <Button color="inherit" variant={'text'}>
+                    GPT-4o
+                </Button>
                 <SendIconButton>
                     <SendIcon />
                 </SendIconButton>

@@ -12,7 +12,7 @@ export const CustomPaper = styled(Paper)(({ theme }) => ({
 export const promptInputProps = {
     disableUnderline: true,
     style: {
-        padding: 8,
+        padding: 10,
     },
 };
 
