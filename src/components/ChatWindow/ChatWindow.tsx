@@ -22,7 +22,7 @@ export default function ChatWindow() {
                     <ChatMessage key={index} text={msg.text} sender={msg.sender} />
                 ))}
             </MessagesContainer>
-            <UserPrompt />
+            <UserPrompt/>
         </Main>
     )
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import {List, ListItem, ListItemButton, ListItemIcon, ListSubheader, Typography} from "@mui/material";
+import AddIcon from '@mui/icons-material/Add';
+import {CustomListSubheader, NewChatButton} from "./ItemsList.styles";
 
 interface ItemsListProps {
     items: string[];
@@ -14,11 +16,15 @@ export default function ItemsList({ items, title }: ItemsListProps) {
             component="nav"
             aria-labelledby="nested-list-subheader"
             subheader={
-                <ListSubheader component="div" id="nested-list-subheader">
+                <CustomListSubheader>
                     <Typography variant={"overline"}>
                         {title}
                     </Typography>
-                </ListSubheader>
+
+                    <NewChatButton color="inherit">
+                        <AddIcon />
+                    </NewChatButton>
+                </CustomListSubheader>
             }
         >
             {items.map((text, index) => (
