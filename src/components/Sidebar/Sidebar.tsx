@@ -10,19 +10,20 @@ import {
     ListSubheader,
     Typography, useTheme
 } from "@mui/material";
-import {useSidebar} from "../../hooks/useSidebar";
 import SidebarHeader from "../SidebarHeader/SidebarHeader";
 import ItemsList from "../ItemsList/ItemsList";
+import {useSelector} from "react-redux";
+import {RootState} from "../../features/store";
 
 export default function Sidebar() {
 
-    const { open } = useSidebar();
+    const isOpen = useSelector((state: RootState) => state.sidebar.open);
 
     return (
         <PersistentDrawer
             variant="persistent"
             anchor="left"
-            open={open}
+            open={isOpen}
         >
             <SidebarHeader/>
             <Divider/>

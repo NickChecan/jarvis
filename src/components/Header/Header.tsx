@@ -2,26 +2,24 @@ import React from 'react';
 import {Toolbar, Typography} from "@mui/material";
 import {AppBar, BurgerMenu} from "./Header.styles";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useSidebar } from "../../hooks/useSidebar";
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "../../features/store";
+import {toggleSidebar} from "../../features/SidebarSlice";
 
 export default function Header() {
-
-    const { open, setOpen } = useSidebar();
-
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
+    const dispatch = useDispatch();
+    const isOpen = useSelector((state: RootState) => state.sidebar.open);
 
     return (
-        <AppBar position="fixed" open={open}>
+        <AppBar position="fixed" open={isOpen}>
             <Toolbar>
                 <BurgerMenu
                     color="inherit"
                     aria-label="open drawer"
-                    onClick={handleDrawerOpen}
+                    onClick={() => dispatch(toggleSidebar())}
                     edge="start"
                     sx={[
-                        open && { display: 'none' },
+                        isOpen && { display: 'none' },
                     ]}
                 >
                     <MenuIcon/>
