@@ -4,7 +4,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {StyledEngineProvider} from '@mui/material/styles';
 import {Provider} from "react-redux";
-import {store} from "./features/store";
+import {persistor, store} from "./features/store";
+import {PersistGate} from "redux-persist/integration/react";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -13,7 +14,9 @@ root.render(
     <React.StrictMode>
         <StyledEngineProvider injectFirst>
             <Provider store={store}>
-                <App/>
+                <PersistGate loading={null} persistor={persistor}>
+                    <App/>
+                </PersistGate>
             </Provider>
         </StyledEngineProvider>
     </React.StrictMode>
