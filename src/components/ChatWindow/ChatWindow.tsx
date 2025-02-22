@@ -4,6 +4,7 @@ import {useSidebar} from "../../hooks/useSidebar";
 import {DrawerHeader} from "../SidebarHeader/SidebarHeader.styles";
 import UserPrompt from "../UserPrompt/UserPrompt";
 import ChatMessage from "../ChatMessage/ChatMessage";
+import {useMessages} from "../../hooks/useMessages";
 
 type Sender = 'assistant' | 'user';
 
@@ -11,12 +12,7 @@ export default function ChatWindow() {
 
     const { open } = useSidebar();
 
-    const messages: { text: string; sender: Sender }[] = [
-        { text: "Hello", sender: 'assistant' },
-        { text: "Hi", sender: 'user' },
-        { text: "Hello", sender: 'assistant' },
-        { text: "Hi", sender: 'user' },
-    ];
+    const { messages } = useMessages();
 
     return (
         <Main open={open}>
