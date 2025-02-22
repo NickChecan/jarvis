@@ -28,3 +28,9 @@ export const Main = styled('main',
         },
     ],
 }));
+
+export const MessagesContainer = styled('div')({
+    flex: 1,
+    overflowY: "auto",
+    maxHeight: "calc(100vh - 230px)" // Adjust height dynamically
+});
