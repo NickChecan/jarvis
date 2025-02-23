@@ -39,6 +39,12 @@ export default function UserPrompt() {
                     InputProps={promptInputProps}
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter" && !e.shiftKey) {
+                            e.preventDefault();
+                            handleSubmit(e);
+                        }
+                    }}
                 />
                 <ButtonsRowBox>
                     <IconButton color="inherit">
