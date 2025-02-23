@@ -6,7 +6,7 @@ type SidebarState = {
 };
 
 const initialState: SidebarState = {
-    open: false,
+    open: true,
     selectedItem: "Some Topic",
 };
 
