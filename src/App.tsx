@@ -1,17 +1,17 @@
 import React from 'react';
-import {Box, CssBaseline} from "@mui/material";
-import Header from "./components/Header/Header";
-import Sidebar from "./components/Sidebar/Sidebar";
-import ChatWindow from "./components/ChatWindow/ChatWindow";
+import {BrowserRouter as Router, Navigate, Route, Routes} from "react-router-dom";
+import ChatPage from "./pages/ChatPage";
+import DashboardPage from "./pages/DashboardPage";
 
 function App() {
     return (
-        <Box sx={{display: 'flex'}}>
-            <CssBaseline/>
-            <Header/>
-            <Sidebar/>
-            <ChatWindow/>
-        </Box>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Navigate to="/chat" />} /> {/* Redirect root to /chat */}
+                <Route path="/chat" element={<ChatPage />} />
+                <Route path="/dashboard" element={<DashboardPage />} />
+            </Routes>
+        </Router>
     );
 }
 

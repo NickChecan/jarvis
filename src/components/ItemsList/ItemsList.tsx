@@ -10,7 +10,7 @@ interface ItemsListProps {
     onItemSelect?: (item: string) => void;
 }
 
-export default function ItemsList({ items, title, selectedItem, onItemSelect }: ItemsListProps) {
+export default function ItemsList({items, title, selectedItem, onItemSelect}: ItemsListProps) {
 
     return (
         <List
@@ -26,9 +26,11 @@ export default function ItemsList({ items, title, selectedItem, onItemSelect }: 
                     <Typography variant={"overline"}>
                         {title}
                     </Typography>
-                    <NewChatButton color="inherit">
-                        <AddIcon />
-                    </NewChatButton>
+                    {title === "chat" && (
+                        <NewChatButton color="inherit">
+                            <AddIcon/>
+                        </NewChatButton>
+                    )}
                 </CustomListSubheader>
             }
         >
