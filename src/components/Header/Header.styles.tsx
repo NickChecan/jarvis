@@ -1,4 +1,4 @@
-import {IconButton, styled} from "@mui/material";
+import {IconButton, styled, Typography} from "@mui/material";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 
 interface AppBarProps extends MuiAppBarProps {
@@ -31,4 +31,9 @@ export const AppBar = styled(MuiAppBar, {
 export const BurgerMenu = styled(IconButton)(({theme}) => ({
     marginRight: theme.spacing(2),
     display: "block",
+}));
+
+export const Title = styled(Typography)(({ theme }) => ({
+    flexGrow: 1,
+    fontWeight: "bold",
 }));

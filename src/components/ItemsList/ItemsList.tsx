@@ -14,7 +14,11 @@ export default function ItemsList({ items, title, selectedItem, onItemSelect }: 
 
     return (
         <List
-            sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+            sx={{
+                width: '100%',
+                maxWidth: 360,
+                bgcolor: 'background.paper'
+            }}
             component="nav"
             aria-labelledby="nested-list-subheader"
             subheader={
@@ -22,7 +26,6 @@ export default function ItemsList({ items, title, selectedItem, onItemSelect }: 
                     <Typography variant={"overline"}>
                         {title}
                     </Typography>
-
                     <NewChatButton color="inherit">
                         <AddIcon />
                     </NewChatButton>

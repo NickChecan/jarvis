@@ -1,6 +1,6 @@
 import React from 'react';
 import {Toolbar, Typography} from "@mui/material";
-import {AppBar, BurgerMenu} from "./Header.styles";
+import {AppBar, BurgerMenu, Title} from "./Header.styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../features/store";
@@ -24,9 +24,9 @@ export default function Header() {
                 >
                     <MenuIcon/>
                 </BurgerMenu>
-                <Typography variant="h6" noWrap component="div">
+                <Title variant="h6" noWrap>
                     Jarvis
-                </Typography>
+                </Title>
             </Toolbar>
         </AppBar>
     )
