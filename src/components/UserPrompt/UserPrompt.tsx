@@ -8,17 +8,21 @@ import {
 import SendIcon from "@mui/icons-material/Send";
 import {Button, IconButton, TextField} from "@mui/material";
 import {Add} from "@mui/icons-material";
-import {useMessages} from "../../hooks/useMessages";
+import {useDispatch, useSelector} from "react-redux";
+import {addMessage} from "../../features/ChatSlice";
+import {RootState} from "../../features/store";
 
 export default function UserPrompt() {
+    const dispatch = useDispatch();
+
     const [input, setInput] = useState("");
 
-    const { addMessage } = useMessages();
+    const chatName = useSelector((state: RootState) => state.sidebar.selectedItem);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (input.trim()) {
-            addMessage({ text: input, sender: "user" });
+            dispatch(addMessage({ chatName, message: input, sender: "user"}));
             setInput("");
         }
     };

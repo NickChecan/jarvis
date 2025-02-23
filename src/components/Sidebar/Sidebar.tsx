@@ -25,7 +25,7 @@ export default function Sidebar() {
 
     const apps = ['Dashboard', 'Cockpit'];
 
-    const chats = ['Some Topic', 'Summarization'];
+    const chats = useSelector((state: RootState) => state.session.chats).map(chat => chat.name);
 
     return (
         <PersistentDrawer

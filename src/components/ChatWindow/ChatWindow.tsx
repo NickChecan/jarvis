@@ -3,7 +3,6 @@ import {Main, MessagesContainer} from "./ChatWindow.styles";
 import {DrawerHeader} from "../SidebarHeader/SidebarHeader.styles";
 import UserPrompt from "../UserPrompt/UserPrompt";
 import ChatMessage from "../ChatMessage/ChatMessage";
-import {useMessages} from "../../hooks/useMessages";
 import {useSelector} from "react-redux";
 import {RootState} from "../../features/store";
 
@@ -13,7 +12,12 @@ export default function ChatWindow() {
 
     const isOpen = useSelector((state: RootState) => state.sidebar.open);
 
-    const { messages } = useMessages();
+    const chatName = useSelector((state: RootState) => state.sidebar.selectedItem);
+
+    const messages = useSelector((state: RootState) => {
+        const chat = state.session.chats.find(chat => chat.name === chatName);
+        return chat ? chat.messages : [];
+    });
 
     return (
         <Main open={isOpen}>
