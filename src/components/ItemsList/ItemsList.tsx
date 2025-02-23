@@ -6,9 +6,11 @@ import {CustomListSubheader, NewChatButton} from "./ItemsList.styles";
 interface ItemsListProps {
     items: string[];
     title: string;
+    selectedItem?: string;
+    onItemSelect?: (item: string) => void;
 }
 
-export default function ItemsList({ items, title }: ItemsListProps) {
+export default function ItemsList({ items, title, selectedItem, onItemSelect }: ItemsListProps) {
 
     return (
         <List
@@ -27,11 +29,14 @@ export default function ItemsList({ items, title }: ItemsListProps) {
                 </CustomListSubheader>
             }
         >
-            {items.map((text, index) => (
-                <ListItem key={text} disablePadding>
-                    <ListItemButton>
+            {items.map((item) => (
+                <ListItem key={item} disablePadding>
+                    <ListItemButton
+                        selected={selectedItem === item}
+                        onClick={() => onItemSelect && onItemSelect(item)}
+                    >
                         <ListItemIcon>
-                            {text}
+                            {item}
                         </ListItemIcon>
                     </ListItemButton>
                 </ListItem>

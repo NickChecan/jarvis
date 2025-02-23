@@ -3,12 +3,10 @@ import sidebarReducer from "./SidebarSlice";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from 'redux-persist/lib/storage';
 
-const persistConfig = {
-    key: 'root',
+const persistedSidebarReducer = persistReducer({
+    key: 'sidebar',
     storage,
-}
-
-const persistedSidebarReducer = persistReducer(persistConfig, sidebarReducer);
+}, sidebarReducer);
 
 export const store = configureStore({
     reducer: {
